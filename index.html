@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f8f4" />
+    <meta name="description" content="Build practical skills, one idea at a time. Learn, practice, and grow with igothrough." />
+    <title>igothrough — Learn by going through it</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#home" aria-label="igothrough home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>igo<span class="brand-light">through</span></span>
+        </a>
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+          <a href="#tutorials">Tutorials</a>
+          <a href="#practice">Practice</a>
+          <a href="#courses">Courses</a>
+          <a href="#articles">Articles</a>
+          <a href="#dashboard">My learning</a>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-button theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.3A8.4 8.4 0 0 1 8.7 3.8a8.5 8.5 0 1 0 11.5 11.5Z" /></svg></button>
+          <button class="button button-quiet sign-in" type="button">Sign in</button>
+          <a class="button button-dark get-started" href="#tutorials">Get started <span aria-hidden="true">↗</span></a>
+          <button class="icon-button menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-grain" aria-hidden="true"></div>
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> A little progress, every day</div>
+            <h1>Make room for<br /><span class="headline-accent">what’s next.</span></h1>
+            <p class="hero-subtitle">Good things happen when you keep going. Find your next skill, learn at your pace, and turn curiosity into confidence.</p>
+            <form class="search-box" role="search" id="search-form">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.2 4.2"/></svg>
+              <label class="sr-only" for="site-search">Search topics and learning paths</label>
+              <input id="site-search" type="search" placeholder="What would you like to learn?" autocomplete="off" />
+              <kbd>↵</kbd>
+            </form>
+            <div class="popular-searches"><span>Try:</span><button type="button" data-search="python">Python</button><button type="button" data-search="design">UI design</button><button type="button" data-search="data">Data structures</button></div>
+          </div>
+          <div class="hero-art" aria-label="Illustration of a growing path through ideas">
+            <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+            <div class="art-sun"></div>
+            <div class="art-card art-card-top"><span class="mini-label">TODAY’S NOTE</span><span class="art-card-line line-wide"></span><span class="art-card-line line-short"></span><span class="art-card-check">✓</span></div>
+            <div class="art-path"><span class="path-node node-one">&lt;/&gt;</span><span class="path-node node-two">✳</span><span class="path-node node-three">↗</span></div>
+            <div class="art-card art-card-bottom"><div class="avatar-stack"><i>J</i><i>M</i><i>A</i><b>+</b></div><span>Learning together<br /><strong>feels different.</strong></span></div>
+            <span class="art-spark spark-one">✳</span><span class="art-spark spark-two">✦</span>
+            <div class="art-caption"><span class="caption-dash"></span> TAKE THE SCENIC ROUTE</div>
+          </div>
+        </div>
+        <div class="hero-footer"><span>LESS SCROLLING. MORE GROWING.</span><span class="hero-footer-right">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></span></div>
+      </section>
+
+      <section class="topic-strip" aria-label="Popular subjects">
+        <div class="topic-strip-inner"><span class="strip-label">A GOOD PLACE TO START</span><div class="topic-chips" id="topic-chips"></div></div>
+      </section>
+
+      <section class="section paths-section" id="paths">
+        <div class="section-heading">
+          <div><div class="eyebrow eyebrow-muted"><span class="eyebrow-dot"></span> PICK YOUR DIRECTION</div><h2>Find a path that<br /><span>feels like yours.</span></h2></div>
+          <p class="section-intro">Big goals get easier when you break them into steps. Start with a path, follow your curiosity, and build skills that stick.</p>
+        </div>
+        <div class="filter-row"><div class="filter-tabs" role="group" aria-label="Filter learning paths" id="filter-tabs"></div><span class="result-count" id="result-count" aria-live="polite"></span></div>
+        <div class="path-grid" id="path-grid"></div>
+        <div class="empty-state" id="empty-state" hidden><span>✳</span><p>No paths found. Try another search.</p><button class="text-link" type="button" id="clear-search">Clear search ↗</button></div>
+      </section>
+
+      <section class="practice-band" id="practice">
+        <div class="practice-graphic" aria-hidden="true"><span class="practice-ring ring-a"></span><span class="practice-ring ring-b"></span><span class="practice-center">01</span><span class="practice-star">✳</span></div>
+        <div class="practice-copy"><div class="eyebrow eyebrow-light"><span class="eyebrow-dot"></span> SMALL WINS ADD UP</div><h2>Make today<br />a little sharper.</h2><p>One thoughtful challenge can teach you more than an hour of scrolling. Take a quick problem, see what clicks, and come back tomorrow for another.</p><a class="button button-lime" href="#daily-challenge">Try today’s challenge <span aria-hidden="true">↗</span></a></div>
+        <div class="practice-note"><span class="note-top">A NOTE TO SELF <span>↗</span></span><p>“I don’t need to know it all.<br />I just need to take the next step.”</p><span class="note-signature">— you, in a week</span></div>
+      </section>
+
+      <section class="section daily-section" id="daily-challenge">
+        <div class="daily-card">
+          <div class="daily-main"><div class="eyebrow eyebrow-muted"><span class="eyebrow-dot"></span> YOUR DAILY DETOUR</div><h2>Can you spot<br />the <span>pattern?</span></h2><p>A sequence is hiding a simple rule. Give yourself two minutes to find it.</p><div class="sequence" aria-label="2, 6, 12, 20, question mark"><span>02</span><i>·</i><span>06</span><i>·</i><span>12</span><i>·</i><span>20</span><i>·</i><b>?</b></div><button class="button button-dark" type="button" id="reveal-answer">Show me the answer <span aria-hidden="true">↗</span></button><p class="answer-note" id="answer-note" hidden>Each term is n × (n + 1): 1×2, 2×3, 3×4, 4×5. Next up is <strong>30</strong> (5×6).</p></div>
+          <div class="daily-side"><div class="daily-badge">TODAY<br /><strong>01</strong></div><div class="daily-decoration" aria-hidden="true"><span class="deco-square"></span><span class="deco-circle"></span><span class="deco-line"></span><span class="deco-spark">✳</span></div><span class="daily-caption">A CLEARER MIND, ONE QUESTION AT A TIME.</span></div>
+        </div>
+      </section>
+
+      <section class="community-section" id="community">
+        <div class="community-inner"><div class="community-mark" aria-hidden="true"><span>i</span><span>g</span><span>o</span><span>!</span></div><div class="community-copy"><div class="eyebrow eyebrow-light"><span class="eyebrow-dot"></span> YOU DON’T HAVE TO GO ALONE</div><h2>Keep your momentum.<br /><span>Find your people.</span></h2><p>Share what you’re learning, ask the questions you’ve been holding onto, and celebrate the small wins along the way.</p><button class="button button-outline-light sign-in" type="button">Join the community <span aria-hidden="true">↗</span></button></div></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-top"><a class="brand brand-footer" href="#top"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>igo<span class="brand-light">through</span></span></a><p>Keep going. You’re getting there.</p><a class="back-top" href="#top">BACK TO TOP <span aria-hidden="true">↑</span></a></div><div class="footer-bottom"><span>© 2026 IGOTHROUGH STUDIO</span><span>BUILT FOR THE LONG WAY ROUND.</span><span>MADE WITH CURIOSITY <b>✳</b></span></div></footer>
+
+    <dialog class="sign-in-dialog" id="sign-in-dialog" aria-labelledby="dialog-title"><button class="dialog-close icon-button" type="button" aria-label="Close dialog">×</button><div class="dialog-mark">✳</div><div class="eyebrow eyebrow-muted">WELCOME TO YOUR NEXT CHAPTER</div><h2 id="dialog-title">Good to have<br />you here.</h2><p>Sign-in is a demo for now. Your learning journey starts right here.</p><form method="dialog"><label for="email">Email address</label><input id="email" type="email" placeholder="you@example.com" required /><button class="button button-dark" type="submit">Continue <span aria-hidden="true">↗</span></button></form><small>No backend is connected yet. This preview won’t send your email.</small></dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

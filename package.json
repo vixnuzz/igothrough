@@ -1,0 +1,10 @@
+{
+  "name": "igothrough",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "A local learning portal for tutorials, practice, and guided courses.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
